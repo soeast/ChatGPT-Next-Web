@@ -2,7 +2,7 @@ name: Sync Fork
 
 on:
   schedule:
-    - cron: '* */3 * * *' # every 30 minutes
+    - cron: '* * */3 * *' # every 30 minutes
   workflow_dispatch: # on button click
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
         uses: GitRML/delete-workflow-runs@main
         continue-on-error: true
         with:
-          retain_days: 1
+          retain_days: 2
           keep_minimum_runs: 0  
           
       - uses: tgymnich/fork-sync@v1.8
